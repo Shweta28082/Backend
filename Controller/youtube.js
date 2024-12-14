@@ -33,6 +33,7 @@ function getAuthUrl() {
   return oauth2Client.generateAuthUrl({
     access_type: "offline",
     scope: ["https://www.googleapis.com/auth/youtube.upload"],
+    prompt: "consent",
   });
 }
 
