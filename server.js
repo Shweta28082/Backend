@@ -5,12 +5,13 @@ const authRoutes = require("./routes/auth");
 require("dotenv").config();
 const upload = require("./uploads/upload"); // Custom multer config
 const { createProfile, getProfile } = require("./Controller/Profile");
-const { getPendingVideos, approveVideo } = require("./Controller/admin");
+const { getPendingVideos, approveVideo } = require("./admin/admin");
 const {
   getAuthUrl,
   getAccessToken,
   uploadVideo,
 } = require("./Controller/youtube");
+const { sendApprovalEmail } = require("./helpers/SendMail");
 
 const app = express();
 
@@ -21,7 +22,8 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
 app.use("/auth", authRoutes);
-
+// Add route for sending approval email
+app.post("/api/send-approval-email", sendApprovalEmail);
 app.post(
   "/api/create-profile",
   upload.fields([{ name: "photos" }, { name: "video" }]),
