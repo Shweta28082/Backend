@@ -6,6 +6,7 @@ const db = mysql.createConnection({
   password: "namit123!", // Updated password
   database: "dbname_risingstars", // Assuming you still want to connect to this database
   port: 3306, // Port remains the same
+  connectTimeout: 20000,
 });
 
 // Connect to the database

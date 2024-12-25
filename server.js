@@ -11,7 +11,6 @@ const {
   getAccessToken,
   uploadVideo,
 } = require("./Controller/youtube");
-const { sendApprovalEmail } = require("./helpers/SendMail");
 
 const app = express();
 
@@ -22,13 +21,6 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
 app.use("/auth", authRoutes);
-// Add route for sending approval email
-app.post("/api/send-approval-email", sendApprovalEmail);
-app.post(
-  "/api/create-profile",
-  upload.fields([{ name: "photos" }, { name: "video" }]),
-  createProfile
-);
 
 // OAuth route to start the authentication process
 app.get("/auth/google", (req, res) => {
