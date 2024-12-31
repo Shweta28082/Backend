@@ -38,28 +38,28 @@ exports.createProfile = (req, res) => {
 
   const sql = `
     INSERT INTO users (email, bio, phone, photos, video_url, approval_status, 
-      gender, country, state, city, dob, height, weight, acting_experience, 
-      modeling_experience, education, acting_course_completed, languages)
-    VALUES (?, ?, ?, ?, ?, 'pending', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ON DUPLICATE KEY UPDATE
-      bio = VALUES(bio),
-      phone = VALUES(phone),
-      photos = VALUES(photos),
-      video_url = VALUES(video_url),
-     
-      gender = VALUES(gender),
-      country = VALUES(country),
-      state = VALUES(state),
-      city = VALUES(city),
-      dob = VALUES(dob),
-      height = VALUES(height),
-      weight = VALUES(weight),
-      acting_experience = VALUES(acting_experience),
-      modeling_experience = VALUES(modeling_experience),
-      education = VALUES(education),
-      acting_course_completed = VALUES(acting_course_completed),
-      languages = VALUES(languages),
-      approval_status = 'pending';
+  gender, country, state, city, dob, height, weight, acting_experience, 
+  modeling_experience, education, acting_course_completed, languages)
+VALUES (?, ?, ?, ?, ?, 'pending', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+ON DUPLICATE KEY UPDATE
+  bio = VALUES(bio),
+  phone = VALUES(phone),
+  photos = VALUES(photos),
+  video_url = VALUES(video_url),
+  gender = VALUES(gender),
+  country = VALUES(country),
+  state = VALUES(state),
+  city = VALUES(city),
+  dob = VALUES(dob),
+  height = VALUES(height),
+  weight = VALUES(weight),
+  acting_experience = VALUES(acting_experience),
+  modeling_experience = VALUES(modeling_experience),
+  education = VALUES(education),
+  acting_course_completed = VALUES(acting_course_completed),
+  languages = VALUES(languages),
+  approval_status = 'pending';
+
   `;
 
   const values = [
