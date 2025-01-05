@@ -1,9 +1,9 @@
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
-  host: "db-risingstars-test.crnta3u65mzc.ap-south-1.rds.amazonaws.com", // Updated hostname
+  host: "risingstar.cdogs6aig4v6.eu-north-1.rds.amazonaws.com", // Updated hostname
   user: "admin", // Updated username
-  password: "namit123!", // Updated password
+  password: "Rjvirangana8545", // Updated password
   database: "dbname_risingstars", // Assuming you still want to connect to this database
   port: 3306, // Port remains the same
   connectTimeout: 20000,

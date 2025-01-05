@@ -68,7 +68,6 @@ ON DUPLICATE KEY UPDATE
     phone || null,
     JSON.stringify(photoPaths) || null,
     videoUrl || null,
-
     gender || null,
     country || null,
     state || null,
